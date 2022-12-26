@@ -1,152 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link href="style.css" rel="stylesheet" />
-    <title>The Basic Language of the Web: HTML</title>
-  </head>
+  <head><!DOCTYPE html >
+< html  lang =" en " >
 
-  <body>
-    <!--
-    <h1>The Basic Language of the Web: HTML</h1>
-    <h2>The Basic Language of the Web: HTML</h2> 
-    <h3>The Basic Language of the Web: HTML</h3>
-    <h4>The Basic Language of the Web: HTML</h4>
-    <h5>The Basic Language of the Web: HTML</h5> 
-    <h6>The Basic Language of the Web: HTML</h6>
-    -->
+<头>
+    <元 字符集=" UTF-8 " >
+    < meta  name =" viewport " content =" width=device-width, initial-scale=1.0 " >
+    < title >上传</ title >
+    <!-- 导入layui的样式表 -->
+    < link  rel ="样式表" href =" lib/layui/css/layui.css " />
+    <!-- 上传进度条样式 -->
+    < link  rel ="样式表" href =" lib/nprogress/nprogress.css " >
+    < link  rel ="样式表" href =" css/base.css " >
+    < link  rel ="样式表" href =" css/common.css " >
+    < link  rel ="样式表" href =" css/upload.css " >
+</头>
 
-    <header>
-      <h1>📘 The Code Magazine</h1>
-<h1>邹城大菜逼</h1>
-       <nav>
-        <a href="blog.html">Blog</a>
-        <a href="#">Challenges</a>
-        <a href="#">Flexbox</a>
-        <a href="#">CSS Grid</a>
-      </nav>
-      
-    </header>
+<正文>
+    <!-- 头部导航栏 -->
+    <标题 类="导航" >
+        <!-- 登陆注册按钮 -->
+        < div 类="右" >
+            < div  id = " register " > <a href="javascript:;">注册</a> < / div > _  _ _ _ _
+            < div  id = " login " >  <a href="javascript:;">登陆</a> < / div > _  _ _ _ _
+        </分格>
+        <!-- 登录后用户部分 -->
+        < div 类="用户" >
+            <a href="javascript:;"> < img src = " img / member.png " alt = " " > </a> _  _  
+            < div 类="头像" >
+                <a href="javascript:;"> < img src = " img / avatar.png " alt = " " > </a> _  _  
+                < ol >
+                    < li > <a class="current" href="upload.html">上传</a> < / li > _  _ _ _ _ _ _ _ _
+                    < li > <a href="center.html">个人主页</a> < / li > _  _ _ _ _
+                    < li > <a href="javascript:;"id="download_history">下载记录</a> < / li > _  _ _ _ _ _ _ _ _
+                    < li > <a class="exit" href="javascript:;" >退出</a> < / li > _  _ _ _ _ _ _ _
+                </ ol >
+            </分格>
+        </分格>
+        <!-- 左图标签 -->
+        < div 类="标志" >
+            <a href="index.html"> < img src = " img / logo.png " alt = " " > </a> _  _ 
+        </分格>
+        <!-- 中间导航栏 -->
+        < div 类=" w " >
+            < div 类="菜单" >
+                < img  src =" img/menus.png " alt ="" >
+                < ul 类="导航框" >
+                    < li  class = " color - change " > <a href="index.html">首页</a> < / li > _  _ _
+                    < li > <a href="javascript:;">摄影</a> < / li > _  _ _ _ _ _
+                    < li > <a href="design.html">设计模板</a> < / li > _  _ _ _ _
+                    < li > <a href="javascript:;">创意背景</a> < / li > _  _ _ _ _
+                    < li > <a href="javascript:;">插画</a> < / li > _  _ _ _ _ _
+                    < li > <a href="javascript:;">免扣元素</a> < / li > _  _ _ _
+                    < li > < a  href =" javascript:; " >办公文档</ a > </ li >
+                    < li > <a href="javascript:;">视频</a> < / li > _  _ _ _ _ _
+                    < li > <a href="javascript:;">商城</a> < / li > _  _ _ _ _ _
+                </ ul >
+            </分格>
+        </分格>
+    </标题>
 
-    <article>
-      <header>
-        <h2>The Basic Language of the Web: HTML</h2>
+    <!-- 表格 -->
+    <表单 类= " layui-form w " id = " uploadList " lay-filter = " formDemo " >
+        <!-- 表头 -->
+        < div 类=" thead " >
+            < h2 >上传列表</ h2 >
+            < button  type =" button " class =" gradient " >设计模板</ button >
+            < button  type =" button " >创意背景</ button >
+            <按钮 类型="按钮" >插画</按钮>
+            < button  type =" button " id =" photography " >摄影</ button >
+            < button  type =" button " >免扣元素</ button >
+            < button  type =" button " >办公文档</ button >
+        </分格>
+        < div 类=" clearfix " >
+            <!-- 左侧部分 -->
+            < div 类="左" >
+                <!-- 作品名称 -->
+                < div  class = " layui-form-item " >
+                    < label >作品名称</ label >
+                    <分区>
+                        < input  type =" text " name =" name " required  lay-verify =" required|production " autocomplete =" off "
+                            class = " layui-input " >
+                    </分格>
+                </分格>
+                <!-- 分类 -->
+                < div  class = " layui-form-item " >
+                    < label >分类</ label >
+                    < div 类="分类" >
+                    </分格>
+                </分格>
+                <!-- 上传文件 -->
+                < div  class = " layui-form-item clearfix " id = " uploadFile " >
+                    < div  id ="文件" >
+                        <!-- 隐藏的文本选择框 -->
+                        < input  type =" file " id =" fileCover " lay-verify =" required " style =" display:none; "
+                            接受=". zip,.rar " >
 
-        <img
-          src="img/laura-jones.jpg"
-          alt="Headshot of Laura Jones"
-          height="50"
-          width="50"
-        />
+                        < label >上传源文件</ label >
+                        < div  class = "附件" >
+                            <按钮 类型="按钮" >
+                                < img  src =" img/accessory.png " alt ="" >
+                                < span >点击上传附件</ span >
+                            </按钮>
+                        </分格>
+                    </分格>
+                    < div  id ="格式" >
+                        < label >源文件格式</ label >
+                        < select  name =" source_type " lay-verify =" required " >
+                            <选项 值="" > </选项>
+                            <选项 值=" PSD " > PSD </选项>
+                            < option  value =" AI " > AI </ option >
+                            < option  value =" CDR " > CDR </ option >
+                            <选项 值=" TIF " > TIF </选项>
+                            <选项 值=" ABR " > ABR </选项>
+                            < option  value =" PPT " > PPT </ option >
+                            <选项 值="每股收益" >每股收益</选项>
+                            <选项 值=" XD7 " > XD </选项>
+                            < option  value ="其他" >其他</ option >
+                        </选择>
+                    </分格>
+                </分格>
+                <!-- 文件尺寸 -->
+                < div  class = " layui-form-item " id = " size " >
+                    < label >源文件尺寸</ label >
+                    < div  class = " layui-inline " >
+                        < input  type =" text " name =" length " required  lay-verify =" required|number|size " autocomplete =" off "
+                            class = " layui-input " >
+                    </分格>
+                    < span > PX </ span >
+                    < div  class = " layui-inline " >
+                        < input  type =" text " name =" width " required  lay-verify =" required|number|size " autocomplete =" off "
+                            class = " layui-input " >
+                    </分格>
+                    < span > PX </ span >
+                </分格>
+                <!-- 差异率 -->
+                < div  class = " layui-form-item " id = " resolution " >
+                    < label >分化率</ label >
+                    <分区>
+                        < input  type =" radio " name =" source_dpi " value =" 72dpi " title =" 72dpi "选中>
+                        < input  type =" radio " name =" source_dpi " value =" 150dpi " title =" 150dpi " >
+                        < input  type =" radio " name =" source_dpi " value =" 300dpi " title =" 300dpi " >
+                        < input  type =" radio " name =" source_dpi " title ="手动填写" >
+                        < div  class = " layui-inline " >
+                            < input  type =" text " name =" source_dpi " required  lay-verify ="" autocomplete =" off "
+                                class = " layui-input " disabled = " true " >
+                        </分格>
+                        <跨度> dpi </跨度>
+                    </分格>
+                </分格>
+                <!-- 介绍 -->
+                < div  class = " layui-form-item layui-form-text " id = " presentation " >
+                    < label >介绍</ label >
+                    < div  style ="位置: 相对; " >
+                        < textarea  name =" description " placeholder ="作品说明（选填） " class =" layui-textarea "
+                            最大长度=" 1000 " > </ textarea >
+                        < span  id =" wordsLength " > 0/1000 </ span >
+                    </分格>
+                </分格>
+                <!-- 标签部分 -->
+                < div  class =" layui-form-item layui-form-text " id =" tags " >
+                    <!-- 添加标签区域 -->
+                    < label >标签</ label >
+                    < div  class =" addTag " lay-verify =" req " >
+                        < button  type =" button " >添加标签</ button >
+                    </分格>
+                    <!-- 底部标签列表 -->
+                    < div 类="标签列表" >
+                        < ul 类=" clearfix " >
+                            < li > < span > UI </ span > </ li >
+                            < li > < span > APP </ span > </ li >
+                            < li > < span >软件界面</ span > </ li >
+                            < li > < span > PSD </ span > </ li >
+                            < li > < span >音乐</ span > </ li >
+                            < li > < span >播放器</ span > </ li >
+                            < li > < span >动画</ span > </ li >
+                            < li > < span >平面</ span > </ li >
+                            < li > < span >海报</ span > </ li >
+                        </ ul >
+                    </分格>
+                </分格>
+            </分格>
+            <!-- 右侧部分 -->
+            < div 类="右" >
+                <!-- 头像部分 -->
+                < div 类="头像" >
+                    < img  src =" img/stylist.png " alt ="" >
+                    < span >设计师</ span >
+                </分格>
+                <!-- 封面 -->
+                < div 类="封面" >
+                    < img  src =" img/cover1.png " alt ="" >
+                </分格>
+                <!-- 隐藏的文本选择框 -->
+                < input  type =" file " id =" coverFile " style =" display: none; " accept =" image/png,image/jpeg,image/gif " >
+                <!-- 隐藏域 -->
+                < input  type = " hidden " lay-verify = " required " name = " show_image " >
+                <!-- 上传按钮 -->
+                < button  type =" button " class =" gradient " id =" uploadCover " >上传封面</ button >
+                <!-- 提示部分 -->
+                < h5 >温暖提示</ h5 >
+                < ul  class ="提示" >
+                    <李>
+                        < i > < img  src =" img/prompt1.png " alt ="" > </ i >
+                        < span >精致封面能吸引更多关注哦。</ span >
+                    </李>
+                    <李>
+                        < i > < img  src =" img/prompt2.png " alt ="" > </ i >
+                        < span >如遇到图片无法删除情况，请尝试清除浏览器存储或更换个人浏览器操作。</ span >
+                    </李>
+                </ ul >
+            </分格>
+        </分格>
+        <!-- 底部按钮 -->
+        < div 类="提交" >
+            < div  class = " layui-form-item " >
+                < button  class =" layui-btn gradient " lay-submit  id =" publish " >立即发布</ button >
+                <!-- <img src="img/loading.gif" alt="" style="display: none;" id="正在加载" /> -->
+                < button  class =" layui-btn layui-btn-primary " lay-submit  id =" save " >保存</ button >
+            </分格>
+        </分格>
+    </表格>
 
-        <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+    <!-- 底部模块 -->
+    < div  class ="脚" >
+        < div  class ="关于" >
+            < div  class =" concerning_left " >
 
-        <img
-          src="img/post-img.jpg"
-          alt="HTML code on a screen"
-          width="500"
-          height="200"
-        />
-      </header>
- 
-      <p>
-        All modern websites and web applications are built using three
-        <em>fundamental</em>
-        technologies: HTML, CSS and JavaScript. These are the languages of the
-        web.
-      </p>
+                < img  src =" img/logo02.png " alt ="" >
+                < img  src =" img/UXDL.png " alt ="" >
+                < p >用户体验设计库</ p >
+                < h5 >用户体验设计库</ h5 >
+                < ul  class ="足码" >
+                    <李>
+                        < img  src =" img/code1.png " alt ="" >
+                        < p >公众号</ p >
+                    </李>
+                    <李>
+                        < img  src =" img/code2.png " alt ="" >
+                        < p >微信</ p >
+                    </李>
+                    <李>
+                        < img  src =" img/code3.png " alt ="" >
+                        < p >学习教程</ p >
+                    </李>
 
-      <p>
-        In this post, let's focus on HTML. We will learn what HTML is all about,
-        and why you too should learn it.
-      </p>
+                </ ul >
+            </分格>
+            < div  class =" concerning_right " >
+                < DL >
+                    < dt >图形资源</ dt >
+                    < dd > <a href ="javascript:;" >图标</a> < / dd > _  _ _ _
+                    < dd > <a href="javascript:;">摄影</a> < / dd > _  _ _ _ _ _
+                    < dd > <a href="javascript:;">箭头插图</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">设计模板</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">创意背景</a> < / dd > _  _ _ _ _
+                </ dl >
+                < DL >
+                    < dt >关于UXDL </ dt >
+                    < dd > <a href="javascript:;">关于我们</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">套餐价格</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">授权协议</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">联系我们</a> < / dd > _  _ _ _ _
+                </ dl >
+                < DL >
+                    < dt >法律</ dt >
+                    < dd > <a href="javascript:;">使用条款</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">隐私政策</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">许可协议</a> < / dd > _  _ _ _ _
+                    < dd > <a href="javascript:;">捐献者条款</a> < / dd > _  _ _ _
+                    < dd > <a href="javascript:;">支持中心</a> < / dd > _  _ _ _ _
+                </ dl >
+            </分格>
 
-      <h3>What is HTML?</h3>
-      <p>
-        HTML stands for <strong>H</strong>yper<strong>T</strong>ext
-        <strong>M</strong>arkup <strong>L</strong>anguage. It's a markup
-        language that web developers use to structure and describe the content
-        of a webpage (not a programming language).
-      </p>
-      <p>
-        HTML consists of elements that describe different types of content:
-        paragraphs, links, headings, images, video, etc. Web browsers understand
-        HTML and render HTML code as websites.
-      </p>
-      <p>In HTML, each element is made up of 3 parts:</p>
+        </分格>
+        < div 类=" clearfix " >
+            < p > © 2020 启智融创科技有限公司. 版权所有.苏ICP备19044258号-2 苏B2-20191025号</ p >
+            < p >  < img  src =" img/beianico.png " alt ="" >京网安全11010502038309号</ p >
+        </分格>
+    </分格>
 
-      <ol>
-        <li>The opening tag</li>
-        <li>The closing tag</li>
-        <li>The actual element</li>
-      </ol>
+    <!-- 分类可选项目模板引擎 -->
+    <脚本 类型="文本/html " id =" classifyTem " >
+        < select  name = "category3_id"  lay-verify = "required" >
+            <选项 值= “” > < /选项>
+            { {每个类别列表 } }
+            < optgroup  label = "{{$value.name}}"  id = "{{$value.id}}" >
+                { {每个 $value 。类别列表 } }
+                < option  value = " {{$value.id}}" > { { $value . 名称} } < /选项>
+                { { /每个} }
+            < / optgroup >
+            { { /每个} }
+        < /选择>
+    </脚本>
 
-      <p>
-        You can learn more at
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-          target="_blank"
-          >MDN Web Docs</a
-        >.
-      </p>
+    <!-- 添加标签的弹出层数据模板 -->
+    < script  type =" text/html " id =" dialog-add " >
+        <表单 类= "layui-form" >
+            < div  class = "layui-form-item"  id = "dialog-tag" >
+                < input  type = "text"  name = "tag"  required  lay-verify = "required|max5"  placeholder = "请输入标签名"
+                    autocomplete = "off"  class = "layui-input" >
+            < / div >
+            < div  class = "layui-form-item" >
+                < div  class = "layui-input-block" >
+                    < button  class = "layui-btn"  id = "dialog-confirm"  lay-submit >确认添加< / button >
+                    < button  type = "button"  class = "layui-btn layui-btn-primary"  id = "dialog-cancel" >取消< / button >
+                < / div >
+            < / div >
+        < /表格>
+    </脚本>
 
-      <h3>Why should you learn HTML?</h3>
+    <!-- 导入layui的js文件 -->
+    <脚本 src =" lib/layui/layui.all.js " > </脚本>
+    <!-- 导入 jQuery -->
+    < script  src =" lib/jquery.js " > </ script >
+    <!-- 导入模板引擎 -->
+    <脚本 src =" lib/template-web.js " > </脚本>
+    <!-- 进度条 js -->
+    <脚本 src =" lib/nprogress/nprogress.js " > </脚本>
+    <!-- 公共部分 -->
+    < script  src =" js/common.js " > </ script >
+    <!-- 导入自己的js文件 -->
+    <脚本 src =" js/upload.js " > </脚本>
+</正文>
 
-      <p>
-        There are countless reasons for learning the fundamental language of the
-        web. Here are 5 of them:
-      </p>
-
-      <ul>
-        <li>To be able to use the fundamental web dev language</li>
-        <li>
-          To hand-craft beautiful websites instead of relying on tools like
-          Worpress or Wix
-        </li>
-        <li>To build web applications</li>
-        <li>To impress friends</li>
-        <li>To have fun 😃</li>
-      </ul>
-
-      <p>Hopefully you learned something new here. See you next time!</p>
-    </article>
-
-    <aside>
-      <h4>Related posts</h4>
-
-      <ul>
-        <li id=.related>
-          <img
-            src="img/related-1.jpg"
-            alt="Person programming"
-            width="75"
-            width="75"
-          />
-          <a href="#">How to Learn Web Development</a>
-          <p class="related-author">By Jonas Schmedtmann</p>
-        </li>
-        <li>
-          <img src="img/related-2.jpg" alt="Lightning" width="75" heigth="75" />
-          <a href="#">The Unknown Powers of CSS</a>
-          <p class="related-author">By Jim Dillon</p>
-        </li>
-        <li>
-          <img
-            src="img/related-3.jpg"
-            alt="JavaScript code on a screen"
-            width="75"
-            height="75"
-          />
-          <a href="#">Why JavaScript is Awesome</a>
-          <p class="related-author">By Matilda</p>
-        </li>
-      </ul>
-    </aside>
-
-    <footer>
-      <p id="Copyright">
-        Copyright &copy; 2027 by The Code Magazine.</footer>
-      </p>
-      
-  </body>
-</html>
+</ html >
